@@ -18,9 +18,7 @@ class App extends StatelessWidget {
         dividerColor: Colors.black,
         colorScheme: const ColorScheme(
           primary: Color.fromARGB(255, 250, 74, 12),
-          primaryVariant: Color.fromARGB(255, 250, 74, 12),
           secondary: Color.fromARGB(255, 244, 123, 10),
-          secondaryVariant: Color.fromARGB(255, 244, 123, 10),
           surface: Color.fromARGB(255, 250, 74, 12),
           background: Color.fromARGB(255, 250, 74, 12),
           error: Color.fromARGB(255, 250, 74, 12),

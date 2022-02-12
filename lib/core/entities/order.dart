@@ -1,6 +1,5 @@
 import 'dart:convert';
-
-import 'package:d_kitchen/core/entities/item.dart';
+import 'package:d_kitchen/domain/entities/food.dart';
 
 enum OrderType { fast, slow }
 
@@ -20,7 +19,7 @@ extension Name on OrderType {
 class Order {
   final int number;
   final OrderType type;
-  final List<Item> items;
+  final List<Food> items;
 
   Order({
     required this.number,

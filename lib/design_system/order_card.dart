@@ -2,6 +2,8 @@ import 'package:d_kitchen/core/entities/order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../domain/features/kitchen/presenters/order_page.dart';
+
 class OrderCard extends StatelessWidget {
   final double width;
   final double height;
@@ -28,7 +30,10 @@ class OrderCard extends StatelessWidget {
           Radius.circular(20),
         )),
         backgroundColor: Colors.white,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => OrderPage(order: order)));
+        },
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: [
