@@ -1,27 +1,28 @@
-import 'package:d_kitchen/core/entities/order.dart';
 import 'package:get/get.dart';
+
+import '../../../entities/order.dart';
 
 class KitchenController {
   RxList<Order> orders = [
     Order(
-      number: 24356232,
-      type: OrderType.fast,
-      items: [],
+      id: 24356232,
+      foods: [],
+      table: 'mesa 1',
     ),
     Order(
-      number: 564545,
-      type: OrderType.slow,
-      items: [],
+      id: 564545,
+      table: 'mesa 1',
+      foods: [],
     ),
     Order(
-      number: 45653,
-      type: OrderType.fast,
-      items: [],
+      id: 45653,
+      table: 'mesa 1',
+      foods: [],
     ),
     Order(
-      number: 445353,
-      type: OrderType.fast,
-      items: [],
+      id: 445353,
+      table: 'mesa 1',
+      foods: [],
     ),
   ].obs;
 }
