@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
 import '../domain/entities/food.dart';
 import 'colors.dart';
@@ -24,7 +23,7 @@ class _FoodCardState extends State<FoodCard> {
     return InkWell(
       onLongPress: () {
         setState(() {
-          contentColor = Color.fromARGB(255, 114, 212, 117).withOpacity(0.9);
+          contentColor = const Color.fromARGB(255, 114, 212, 117).withOpacity(0.9);
         });
       },
       child: Stack(
@@ -88,7 +87,7 @@ class _FoodCardState extends State<FoodCard> {
       );
 
   Widget _nameLabel(Food food) => Padding(
-        padding: EdgeInsets.only(top: 50.0),
+        padding: const EdgeInsets.only(top: 50.0),
         child: Center(
           child: SizedBox(
             width: 200,
@@ -101,7 +100,7 @@ class _FoodCardState extends State<FoodCard> {
                     food.name,
                     overflow: TextOverflow.clip,
                     textAlign: TextAlign.center,
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
+                    style: const TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
                     maxLines: 2,
                   ),
                 ),
@@ -124,7 +123,7 @@ class _FoodCardState extends State<FoodCard> {
                   r'R$ ' + food.price.toString(),
                   overflow: TextOverflow.clip,
                   textAlign: TextAlign.center,
-                  style: TextStyle(
+                  style: const TextStyle(
                       color: primaryOrange,
                       fontWeight: FontWeight.bold,
                       fontSize: 20),

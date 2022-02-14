@@ -1,5 +1,6 @@
 import 'dart:convert';
-import 'package:d_kitchen/domain/entities/food.dart';
+
+import 'food.dart';
 
 enum OrderType { fast, slow }
 
@@ -17,30 +18,36 @@ extension Name on OrderType {
 }
 
 class Order {
-  final int number;
+  int? id;
+
+  String table;
+
   final OrderType type;
-  final List<Food> items;
+
+  List<Food> foods;
 
   Order({
-    required this.number,
+    this.id,
+    required this.table,
+    required this.foods,
     required this.type,
-    required this.items,
   });
+
+  factory Order.fromMap(Map<String, dynamic> json) {
+    return Order(
+      id: json['id'],
+      table: json['table']!,
+      foods: json['foods']!,
+      type: OrderType.values[json['type']!],
+    );
+  }
 
   Map<String, dynamic> toMap() {
     return {
-      'number': number,
-      'type': type,
-      'items': items,
+      'id': id,
+      'table': table,
+      'foods': foods,
     };
-  }
-
-  factory Order.fromMap(Map<String, dynamic> map) {
-    return Order(
-      number: map['number']!,
-      type: map['type']!,
-      items: map['items']!,
-    );
   }
 
   String toJson() => json.encode(toMap());

@@ -1,12 +1,13 @@
 import 'package:d_kitchen/domain/entities/food.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../core/entities/order.dart';
 import '../../../../design_system/orders_food_card.dart';
 import '../../../../design_system/primary_button.dart';
+import '../../../entities/order.dart';
 
 class OrderPage extends StatelessWidget {
   final Order order;
+
   const OrderPage({Key? key, required this.order}) : super(key: key);
 
   @override
@@ -38,7 +39,7 @@ class OrderPage extends StatelessWidget {
                       width: 20,
                     ),
                     FoodCard(
-                      orderNumber: order.number,
+                      orderNumber: order.id ?? 0,
                       food: Food(
                           name: 'test',
                           imageUrls: List.from([
@@ -82,7 +83,7 @@ Widget numberOrderCard(BuildContext context, Order order) {
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
               Text(
-                order.number.toString(),
+                order.id.toString(),
                 style: const TextStyle(
                     color: Colors.black,
                     fontSize: 30,

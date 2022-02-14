@@ -30,6 +30,7 @@ dependencies:
   flutter:
     sdk: flutter
   flutter_svg: ^1.0.0
+  flutter_nearby_connections: ^1.1.1
   dartz: ^0.10.1
   get: ^4.6.1
   http: ^0.13.4

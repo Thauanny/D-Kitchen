@@ -1,7 +1,7 @@
-import 'package:d_kitchen/core/entities/order.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
+import '../domain/entities/order.dart';
 import '../domain/features/kitchen/presenters/order_page.dart';
 
 class OrderCard extends StatelessWidget {
@@ -56,7 +56,7 @@ class OrderCard extends StatelessWidget {
                   ),
                 ),
                 Text(
-                  order.number.toString(),
+                  order.id.toString(),
                   style: const TextStyle(color: Colors.black),
                 ),
                 Container(
@@ -68,7 +68,7 @@ class OrderCard extends StatelessWidget {
                   height: iconsHeight,
                   child: Center(
                     child: Text(
-                      order.items.length.toString(),
+                      order.foods.length.toString(),
                       style: const TextStyle(
                         color: Colors.white,
                         fontWeight: FontWeight.bold,
